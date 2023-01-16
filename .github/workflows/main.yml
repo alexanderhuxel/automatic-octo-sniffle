@@ -22,7 +22,7 @@ jobs:
       - name: 💻 FTP Deploy 💻
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ftp.reservision.alexhuxe.de
+          server: ftp.reservision.alexhuxel.de
           # server-dir // declare de directiory where will be uploaded
           server-dir: ./
           username: ${{secrets.USERNAME}}
