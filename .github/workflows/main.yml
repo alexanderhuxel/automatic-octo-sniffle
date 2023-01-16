@@ -27,4 +27,4 @@ jobs:
           server-dir: ./
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
-          local-dir: ./dist/fizzbuzz
+          local-dir: ./dist/fizzbuzz/
