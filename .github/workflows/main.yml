@@ -1,0 +1,30 @@
+# THIS SCRIPT IS RUNNING WITH THE EXACT FOLDER STRUCTUR #
+on:
+  push:
+    branches:
+      - main
+name: 🚀 Deployment 🚀
+jobs:
+  web-deploy:
+    name: 🎉 FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: 💻 Install Node 12.16.3  💻
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.18
+
+      - name: 💻 FTP Deploy 💻
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ftp.reservision.alexhuxe.de
+          # server-dir // declare de directiory where will be uploaded
+          server-dir: ./
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          local-dir: ./dist/fizzbuzz
