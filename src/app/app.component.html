@@ -1,1 +1,41 @@
-<div class="bg-black">test</div>
+<div
+  class="flex h-screen bg-gray-600 items-center justify-center flex-col gap-y-10"
+>
+  <div class="w-1/4">
+    <h2 class="h2 text-white">Liste</h2>
+    <p class="text-white">
+      {{ this.backend.list }}
+    </p>
+
+    <form
+      #form="ngForm"
+      (ngSubmit)="getValueofFormAndFillList(form.value); form.reset()"
+    >
+      <input
+        class="px-2 py-1 rounded mt-2 focus-within:outline-none w-full"
+        ngModel
+        type="number"
+        name="number"
+        id="number"
+        placeholder="100"
+      />
+      <button class="bg-black text-white cursor-pointer px-2 py-1 rounded mt-3">
+        Liste anfordern
+      </button>
+    </form>
+  </div>
+
+  <div class="w-1/4">
+    <h2 class="h2 text-white">Items</h2>
+    <p class="text-white">
+      {{ this.backend.items }}
+    </p>
+
+    <button
+      class="bg-black text-white cursor-pointer px-2 py-1 rounded mt-3"
+      (click)="this.backend.increaseItems(this.backend.lastItem)"
+    >
+      Zahl anfordern
+    </button>
+  </div>
+</div>
