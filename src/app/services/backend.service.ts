@@ -41,7 +41,7 @@ export class BackendService {
       )
       .subscribe({
         next: (data) => {
-          this.items = this.items + ',' + data;
+          this.items = this.items + ', ' + data;
           this.lastItem++;
         },
         error: (error) => {
