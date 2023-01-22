@@ -1,5 +1,5 @@
 <div class="bg-gray-600 min-h-screen flex justify-center items-center">
-  <div class="container mx-auto border-black border">
+  <div class="container px-[1rem] mx-auto">
     <div>
       <h2 class="h2 text-white">Liste</h2>
       <p class="text-white">
@@ -7,7 +7,7 @@
       </p>
 
       <form
-        class="w-1/4"
+        class="lg:w-1/4"
         #form="ngForm"
         (ngSubmit)="getValueofFormAndFillList(form.value); form.reset()"
       >
